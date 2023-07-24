@@ -1,4 +1,9 @@
 import datetime
+import calc
+import passcheck
+import ToDoListOOPS
+import RPS
+import Hangman
 class FUNCTIONALITY:
     def __init__(self) -> None:
         pass
@@ -23,6 +28,22 @@ class FUNCTIONALITY:
 
     def weather(self):
         print("Sunny/windy")
+    
+    def guicalculator(self):
+        calc.main()
+    
+    def passwordchecker(self):
+        passcheck.Checkermain()
+    
+    def Todolist(self):
+        ToDoListOOPS.user()
+    
+    def Rockpapergame(self):
+        RPS.rpsgame()
+    
+    def hangmangame(self):
+        Hangman.hangame()
+
 
 class INTERACTION(FUNCTIONALITY):
     def __init__(self) -> None:
@@ -34,27 +55,21 @@ class INTERACTION(FUNCTIONALITY):
         b = a.lower()
         if "time" in b:
             self.time()
-        elif "date" in b:
+        elif "date" in b or "year" in b or "month" in b:
             self.date()
-        elif "weather" in b:
+        elif "weather" in b or "forecast" in b or "temp" in b:
             self.weather()
+        elif "calc" in b or "math" in b:
+            self.guicalculator()
+        elif "check" in b or "pass" in b:
+            self.passwordchecker()
+        elif "todo" in b or "task" in b:
+            self.Todolist()
+        elif "rock" in b or "paper" in b or "scizzors" in b:
+            self.Rockpapergame()
+        elif "hangman" in b or "hangmangame" in b:
+            self.hangmangame()
         else:
             print("Sorry, I can't do that for you. Please try again!")
 
 obj = INTERACTION()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
